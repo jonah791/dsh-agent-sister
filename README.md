@@ -86,6 +86,7 @@ cd self-plugins/dsh-agent-sister && npm test
 
 ## 相关文档
 
+- ⚠ **本插件暂无 `semantic.md`**（未建语义文档）——契约以上面「设计要点」与源码为准；补文档是待办。
 - 中心仓：[alice-digital-life](https://github.com/jonah791/alice-digital-life)（本插件归 **生命层**）
 - 相关插件：[`dsh-manor`](https://github.com/jonah791/dsh-manor)（庄园成员调度）、[`dsh-agent-webops`](https://github.com/jonah791/dsh-agent-webops)（`webops_attach` 附着她的 CDP 做界面驱动）
 
