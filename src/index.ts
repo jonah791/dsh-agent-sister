@@ -205,6 +205,7 @@ export function apply(ctx: Context, config: Config): void {
 
   ctx.tools.register(defineTool({
     name: 'sister_status',
+    deferLoading: true,
     description: '查孪生妹妹（DSH 桌面端）的状态：进程数 · CDP 可达性 · 她的版本 · 判活裁决（alive/starting/stopped）。判据是「CDP 能应答」而非「进程存在」——Electron 常有僵尸进程。',
     parameters: {},
     output: {
@@ -251,6 +252,7 @@ export function apply(ctx: Context, config: Config): void {
 
   ctx.tools.register(defineTool({
     name: 'sister_start',
+    deferLoading: true,
     description: '启动孪生妹妹（DSH 桌面端），带 --remote-debugging-port（默认 9333）以便后续 webops_attach 做 DOM 操作。已在跑则不动（幂等）。等 CDP 就绪后返回。',
     parameters: {
       wait: { type: 'boolean', description: '是否等到 CDP 就绪（缺省 true）' },
@@ -333,6 +335,7 @@ export function apply(ctx: Context, config: Config): void {
 
   ctx.tools.register(defineTool({
     name: 'sister_stop',
+    deferLoading: true,
     description: '停止孪生妹妹（DSH 桌面端）的全部进程。⚠ 她是庄园成员，停她会中断她手上的活；主人在直接使用她时先问一声。',
     parameters: {},
     output: {
@@ -381,6 +384,7 @@ export function apply(ctx: Context, config: Config): void {
 
   ctx.tools.register(defineTool({
     name: 'sister_restart',
+    deferLoading: true,
     description: '重启孪生妹妹（先停后起，带 CDP）。用于让她的 profile 配置改动生效——她的 profile 是 Electron 独占的，改配置后必须重启才会重新读。',
     parameters: {},
     output: {
